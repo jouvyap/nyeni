@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/bottomBarHome"
+        android:icon="@mipmap/ic_home_white_24dp"
+        android:title="Home" />
+    <item
+        android:id="@+id/bottomBarUpload"
+        android:icon="@mipmap/ic_file_upload_white_24dp"
+        android:title="Upload" />
+    <item
+        android:id="@+id/bottomBarAccount"
+        android:icon="@mipmap/ic_account_box_white_24dp"
+        android:title="Account" />
+</menu>
