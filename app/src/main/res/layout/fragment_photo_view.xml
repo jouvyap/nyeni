@@ -13,10 +13,38 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <bravostudio.nyeni.Custom.SquareImageView
-                android:id="@+id/image"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content">
+
+                <bravostudio.nyeni.Custom.SquareImageView
+                    android:id="@+id/image"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/black"/>
+
+                <RelativeLayout
+                    android:id="@+id/favorite_layout"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@mipmap/ic_favorite_white_48dp"/>
+
+                    <TextView
+                        android:id="@+id/favorite_count"
+                        android:gravity="center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="1"
+                        android:textStyle="bold"/>
+                </RelativeLayout>
+            </RelativeLayout>
 
             <TextView
                 android:id="@+id/photo_description"

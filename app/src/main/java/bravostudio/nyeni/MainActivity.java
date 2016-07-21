@@ -79,9 +79,19 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMenuTabReSelected(@IdRes int menuItemId) {
                 if (menuItemId == R.id.bottomBarHome) {
-                    // The user reselected item number one, scroll your content to top.
-                    HomeFragment homeFragment = (HomeFragment) getVisibleFragment();
-                    homeFragment.gridView.smoothScrollToPosition(0);
+                    try {
+                        HomeFragment homeFragment = (HomeFragment) getVisibleFragment();
+                        homeFragment.gridView.smoothScrollToPosition(0);
+                    } catch (Exception e){
+                        changeFragment(NyeniConstant.MENU_TAB.HOME);
+                    }
+                } else if(menuItemId == R.id.bottomBarAccount){
+                    try {
+                        AccountFragment accountFragment = (AccountFragment) getVisibleFragment();
+                        accountFragment.gridView.smoothScrollToPosition(0);
+                    } catch (Exception e){
+                        changeFragment(NyeniConstant.MENU_TAB.ACCOUNT);
+                    }
                 }
             }
         });

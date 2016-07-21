@@ -6,6 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
@@ -27,6 +29,18 @@ public class PhotoViewFragment extends Fragment {
         SquareImageView squareImageView = (SquareImageView) photoViewFragment.findViewById(R.id
                 .image);
         Picasso.with(getActivity()).load("http://i.imgur.com/DvpvklR.png").into(squareImageView);
+
+        RelativeLayout favorite = (RelativeLayout) photoViewFragment.findViewById(R.id
+                .favorite_layout);
+        final TextView favorite_count = (TextView) photoViewFragment.findViewById(R.id.favorite_count);
+        favorite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int count = Integer.parseInt(favorite_count.getText().toString());
+                count++;
+                favorite_count.setText("" + count);
+            }
+        });
 
         return photoViewFragment;
     }
