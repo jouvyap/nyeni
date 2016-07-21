@@ -108,9 +108,11 @@ public class UploadFragment extends Fragment {
         Intent takeAudioIntent = new Intent(MediaStore.Audio.Media.RECORD_SOUND_ACTION);
         fileUri = getOutputMediaFileUri(REQUEST_AUDIO_CAPTURE);
         takeAudioIntent.putExtra(MediaStore.EXTRA_OUTPUT, fileUri);
-        startActivityForResult(takeAudioIntent, REQUEST_AUDIO_CAPTURE);
-//        Toast.makeText(getActivity(), "Fitur belum tersedia", Toast.LENGTH_SHORT).show();
-        //TODO: Check whether the device have audio recorder or not
+        if (takeAudioIntent.resolveActivity(getActivity().getPackageManager()) != null) {
+            startActivityForResult(takeAudioIntent, REQUEST_AUDIO_CAPTURE);
+        } else {
+            Toast.makeText(getActivity(), "Device tidak support", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void choosePhotos(){

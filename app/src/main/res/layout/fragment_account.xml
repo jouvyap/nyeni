@@ -4,10 +4,79 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:text="ACCOUNT FRAGMENT"/>
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@color/colorBackground">
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+                <TextView
+                    android:id="@+id/post_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1270"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="posts"/>
+            </LinearLayout>
+
+            <bravostudio.nyeni.Custom.CircleImageView
+                android:id="@+id/image_profile"
+                android:layout_gravity="center_vertical"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@mipmap/ic_launcher"
+                android:layout_margin="8dp"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_margin="8dp">
+                <TextView
+                    android:id="@+id/post_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="8690"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="likes"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_margin="8dp"
+            android:text="Jouvy Alif Pradewo"/>
+
+        <GridView
+            android:id="@+id/grid_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:numColumns="3"
+            android:stretchMode="columnWidth"/>
+    </LinearLayout>
 </LinearLayout>
