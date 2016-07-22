@@ -1,5 +1,6 @@
 package bravostudio.nyeni.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -10,7 +11,9 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 
 import bravostudio.nyeni.Adapter.GridAdapter;
+import bravostudio.nyeni.Custom.CircleImageView;
 import bravostudio.nyeni.Custom.NyeniConstant;
+import bravostudio.nyeni.Custom.SimpleClientTrackingActivity;
 import bravostudio.nyeni.MainActivity;
 import bravostudio.nyeni.R;
 
@@ -35,6 +38,16 @@ public class AccountFragment extends Fragment {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 MainActivity mainActivity = (MainActivity) getActivity();
                 mainActivity.changeFragment(NyeniConstant.MENU_TAB.PHOTO_VIEW);
+            }
+        });
+
+        CircleImageView profileImage = (CircleImageView) accountFragmentView.findViewById(R.id
+                .image_profile);
+        profileImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent( getActivity(), SimpleClientTrackingActivity.class);
+                startActivity(intent);
             }
         });
 

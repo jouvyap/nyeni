@@ -79,17 +79,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMenuTabReSelected(@IdRes int menuItemId) {
                 if (menuItemId == R.id.bottomBarHome) {
-                    try {
+                    if(getVisibleFragment() instanceof HomeFragment){
                         HomeFragment homeFragment = (HomeFragment) getVisibleFragment();
                         homeFragment.gridView.smoothScrollToPosition(0);
-                    } catch (Exception e){
+                    } else{
                         changeFragment(NyeniConstant.MENU_TAB.HOME);
                     }
                 } else if(menuItemId == R.id.bottomBarAccount){
-                    try {
+                    if(getVisibleFragment() instanceof AccountFragment){
                         AccountFragment accountFragment = (AccountFragment) getVisibleFragment();
                         accountFragment.gridView.smoothScrollToPosition(0);
-                    } catch (Exception e){
+                    } else{
                         changeFragment(NyeniConstant.MENU_TAB.ACCOUNT);
                     }
                 }
