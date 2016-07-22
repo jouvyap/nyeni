@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Nyeni</string>
+
+    <string name="preference_file_key">BRAVOSTUDIO.PREFERENCE.FILE.KEY</string>
 </resources>

@@ -64,13 +64,14 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/name_profile"
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="18sp"
             android:textStyle="bold"
             android:layout_margin="8dp"
-            android:text="Jouvy Alif Pradewo"/>
+            android:text="Display Name"/>
 
         <GridView
             android:id="@+id/grid_view"

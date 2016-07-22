@@ -2,6 +2,7 @@ package bravostudio.nyeni;
 
 import android.os.Handler;
 import android.support.annotation.IdRes;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -30,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private FrameLayout mMainContent;
     private BottomBar mBottomBar;
-
-    private boolean doubleBackToExitPressedOnce = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -159,6 +158,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //GET ACTIVE FRAGMENT
+    @Nullable
     private Fragment getVisibleFragment(){
         FragmentManager fragmentManager = MainActivity.this.getSupportFragmentManager();
         List<Fragment> fragments = fragmentManager.getFragments();
